@@ -2,15 +2,106 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Places to visit in Georgia</title>
+    <title>One Dog's Life</title>
     <style>
-    /* Styles to come*/
+    /* Styles to come...focus on structure first! */
+    /* relevant styles */
+    .img__wrap {
+      position: relative;
+    }
+
+    .img__description_layer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(36, 62, 206, 0.6);
+      color: #fff;
+      visibility: hidden;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* transition effect. not necessary */
+      transition: opacity .2s, visibility .2s;
+    }
+
+    .img__wrap:hover .img__description_layer {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .img__description {
+      transition: .2s;
+      transform: translateY(1em);
+    }
+
+    .img__wrap:hover .img__description {
+      transform: translateY(0);
+    }
+
+/* Hover code above was copied */
+      #gallery-wrapper{
+        text-align: center;
+      }
+      .thumb{
+        /*width: 15%;*/
+        border: 4px solid #0f0;
+      }
+      .colpic{
+        /*display: inline;*/
+        width: 20%;
+        float: left;*/
+      }
+      .colpic img{
+        width: 215px;
+      }
+      #BigPicture {
+        display: inline-block;
+        width: 75%;  /* sibling (colpic) took 20% */
+        border: 4px solid #0f0;
+      }
+      #BigPicture img {
+        width: 100%;
+      }
+
     </style>
   </head>
   <body>
     <!--  A wrapper for the whole gallery.  div helps us organize-->
     <div id="gallery-wrapper">
-
+      <!--  TOP SECTION -->
+      <div id="top-section">
+        <h1>A photo gallery made with CSS, HTML, a tiny bit of JS and a lot of love!</h1>
+      </div>
+        <div id="middle-section">
+          <!-- <h1>Middle Section</h1> -->
+          <div class="colpic">
+              <img class="thumb" src="./images/Charlie01.jpg"  onclick="bigPic.src = this.src"/>
+              <div>Take Me Home!</div>
+            <img class="thumb" src="./images/Charlie02.jpg" onclick="bigPic.src = this.src"/>
+            <div>Yeah! On my way home!</div>
+            <img class="thumb" src="./images/Charlie03.jpg" onclick="bigPic.src = this.src"/>
+            <div>Good decision!</div>
+            <img class="thumb" src="./images/CharlieBoating.jpg" onclick="bigPic.src = this.src"/>
+            <div>I'm boaaating!</div>
+            <img class="thumb" src="./images/CharlieWTF.jpg" onclick="bigPic.src = this.src"/>
+            <div>Worn out</div>
+            </div>
+            <div id="BigPicture" class="img__wrap hover" onclick="window.open(bigPic.src, '_blank');"> 
+              <img src="./images/Charlie01.jpg" name="bigPic" onclick="window.open(this.src, '_blank');">
+              <div class="img__description_layer">
+                <p class="img__description">Click to open another tab
+                </p>
+              </div>
+          </div>
+      </div>
+      <!-- <div id="bottom-section">
+        <h1>Bottom Section</h1>
+        <img src="./images/Charlie01.jpg" name="bigPic">
+      </div> -->
     </div>
   </body>
 </html>
