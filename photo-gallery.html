@@ -45,21 +45,24 @@
 /* Hover code above was copied */
       #gallery-wrapper{
         text-align: center;
+        width: 80%;
+        margin:auto;
       }
       .thumb{
         /*width: 15%;*/
         border: 4px solid #0f0;
       }
       .colpic{
-        /*display: inline;*/
+        display: inline-block;
         width: 20%;
-        float: left;*/
       }
       .colpic img{
-        width: 215px;
+        /*width: 215px;*/
+        width: 100%;
       }
       #BigPicture {
         display: inline-block;
+        vertical-align: top;
         width: 75%;  /* sibling (colpic) took 20% */
         border: 4px solid #0f0;
       }
@@ -90,7 +93,7 @@
             <img class="thumb" src="./images/CharlieWTF.jpg" onclick="bigPic.src = this.src"/>
             <div>Worn out</div>
             </div>
-            <div id="BigPicture" class="img__wrap hover" onclick="window.open(bigPic.src, '_blank');"> 
+            <div id="BigPicture" class="img__wrap hover" onclick="window.open(bigPic.src, '_blank');">
               <img src="./images/Charlie01.jpg" name="bigPic" onclick="window.open(this.src, '_blank');">
               <div class="img__description_layer">
                 <p class="img__description">Click to open another tab
